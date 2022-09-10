@@ -903,7 +903,15 @@ class PlayState extends MusicBeatState
 		var luaFile:String = 'stages/' + curStage + '.lua';
 			luaFile = Paths.getPreloadPath(luaFile);
 			if(OpenFlAssets.exists(luaFile)) {
-				doPush = true;
+				doPush = true
+
+var creditText:FlxText = new FlxText(876, 648, 348);
+		creditText.text = '\nEDD34R';
+		creditText.setFormat(Paths.font("comic.ttf"), 30, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLUE);
+		creditText.cameras = [camHUD];
+		creditText.scrollFactor.set();
+		add(creditText);
+
                 }
 
 		if(doPush)
@@ -1213,6 +1221,14 @@ class PlayState extends MusicBeatState
 			luaFile = Paths.getPreloadPath(luaFile);
 			if(OpenFlAssets.exists(luaFile)) {
 				doPush = true;
+
+var creditText:FlxText = new FlxText(876, 648, 348);
+		creditText.text = 'PORTED BY\nEDD34R';
+		creditText.setFormat(Paths.font("Milky Nice.ttf"), 30, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLUE);
+		creditText.cameras = [camHUD];
+		creditText.scrollFactor.set();
+		add(creditText);
+
 			}
 		
 		if(doPush) 
